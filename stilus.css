@@ -1,0 +1,129 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+img {
+    width: 100%;
+    height: auto;
+}
+
+.sec1 {
+    border-style: groove;
+    
+}
+.sec2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 5px;
+}
+.sec2 img {
+    padding: 5px;
+    border: solid 1px;
+}
+body {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+   
+}
+main {
+    background-color: white;
+    /* Tároló, szülőelem */
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "h" 
+    "n"
+    "a"
+    "f";
+}
+
+header {
+    grid-area: h;
+}
+article {
+    grid-area: a;
+}
+nav {
+    grid-area: n;
+}
+footer {
+    grid-area: f;
+}
+aside#bal {
+    grid-area: b;
+}
+aside#jobb {
+    grid-area: j;
+}
+
+
+header, nav, article, footer, aside {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    list-style-type: none;
+    text-align: center;
+    background-color: grey;
+
+}
+nav li {
+    background-color: red;
+    padding: 5px;
+    
+}
+nav a {
+    text-decoration: none;
+}
+
+
+@media only screen and (max-width: 700px) {
+    body, main {
+      background-color: lightblue;
+      width: 100%;
+    }
+
+    main {
+        grid-template-columns: 1fr ;
+        grid-template-areas:
+        "h h" 
+        "n n"
+        "a b"
+        "j j"
+        "f f";
+    }
+
+  }
+  
+  @media only screen and (max-width: 450px) {
+    body, main {
+      background-color: lightblue;
+      width: 100%;
+    }
+
+    main {
+        font-size: 12px+10vw;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "h" 
+        "n"
+        "a"
+        "b"
+        "j"
+        "f";
+    }
+    nav ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0px;
+        
+    }
+}
